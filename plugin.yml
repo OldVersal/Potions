@@ -1,0 +1,7 @@
+name: Potions
+version: 1.0.0
+author:
+- OldVersal
+- cc0d3r
+api: 5.0.0
+main: Potions\PotLoader
