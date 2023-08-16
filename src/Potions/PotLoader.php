@@ -9,7 +9,7 @@ use pocketmine\Server;
 use Potions\entity\listener\Usage;
 use Potions\entity\CustomPot;
 
-class Main extends PluginBase implements Listener {
+class PotLoader extends PluginBase implements Listener {
 
     public function onEnable(): void {
         $this->getServer()->getPluginManager()->registerEvents(new Usage(), $this);
