@@ -38,7 +38,7 @@ class Usage implements Listener
                 $location->getPitch()
             ),
             $player,
-            PotionTypeIdMap::getInstance()->fromId(PotionTypeIds::STRENGTH)
+            PotionTypeIdMap::getInstance()->fromId(PotionTypeIds::LONG_REGENERATION)
         );
 
         $launchEvent = new ProjectileLaunchEvent($customPotion);
