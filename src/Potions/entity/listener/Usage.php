@@ -14,13 +14,15 @@ use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\item\VanillaItems;
 use pocketmine\player\Player;
 use pocketmine\world\sound\ThrowSound;
+use pocketmine\item\Potion;
+use pocketmine\item\PotionType;
 
 class Usage implements Listener
 {
     public function onInteract(PlayerInteractEvent $event): void
     {
         $itemInHand = $event->getPlayer()->getInventory()->getItemInHand();
-        if ($itemInHand->getMeta() === 22) {
+        if ($itemInHand instanceof Potion && $itemInHand->getPotionType()->getEffectId() === PotionType::INSTANT_HEALTH && $itemInHand->getPotionType()->getEffectLevel() === 2) {
             $this->launchCustomPotion($event->getPlayer());
             $event->cancel();
         }
@@ -59,7 +61,7 @@ class Usage implements Listener
     public function onItemUse(PlayerItemUseEvent $event): void
     {
         $itemInHand = $event->getPlayer()->getInventory()->getItemInHand();
-        if ($itemInHand->getMeta() === 22) {
+        if ($itemInHand instanceof Potion && $itemInHand->getPotionType()->getEffectId() === PotionType::INSTANT_HEALTH && $itemInHand->getPotionType()->getEffectLevel() === 2) {
             $this->launchCustomPotion($event->getPlayer());
             $event->cancel();
         }
