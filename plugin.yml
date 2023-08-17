@@ -5,3 +5,4 @@ author:
 - cc0d3r
 api: 5.0.0
 main: Potions\PotLoader
+description: SimpleCustomPots
